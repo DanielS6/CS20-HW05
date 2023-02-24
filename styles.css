@@ -1,0 +1,59 @@
+body {
+    font-size: 16pt;
+}
+
+h1 {
+    /* Center the heading text */
+    text-align: center;
+}
+
+#body-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#game-grid,
+#game-grid td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#game-grid {
+    width: 100%;
+}
+
+#game-grid tr {
+    height: 90px;
+}
+
+/* For squares that the current player can play in, use a pointer instead */
+/* of the default arrow. If the game is over, no squares can be played in, */
+/* if the game is ongoing, only squares without a `player` attribute set */
+/* can be played in */
+#game-grid td {
+    width: 20px;
+    max-width: 20px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#game-grid td[player],
+#game-grid.game-over td /* specify td to increase specificity */ {
+    cursor: default;
+}
+
+#reset-btn-holder {
+    text-align: center;
+    padding-top: 10px;
+}
+.winning-line {
+    color: lightgreen;
+}
+.result-victory {
+    font-weight: bold;
+}
+.hidden {
+    display: none;
+}
